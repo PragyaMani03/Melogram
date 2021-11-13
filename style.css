@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+body {
+    background-color: antiquewhite;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    font-family: 'ubuntu', sans-serif;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 65px;
+    background-color: black;
+    color: white;
+}
+
+nav ul li {
+    padding: 0 12px;  
+}
+
+.brand img {
+    width: 190px;
+}
+
+.bottom{
+    position: sticky;
+    height: 100px;
+    background-color: black;
+    color: white;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    min-height: 75vh;
+}
+
+#myProgressBar{
+    width: 80vw;
+    text-align: center;
+}
