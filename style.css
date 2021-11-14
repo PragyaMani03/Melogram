@@ -60,12 +60,17 @@ nav ul li {
     background-image: url('bg.jpeg');
     background-repeat: no-repeat;
     background-size: 60% 100%;
-    background-position: right 5% bottom 5%;
+    background-position: right 5% bottom 5% ;
 }
 
 #myProgressBar{
     width: 80vw;
     text-align: center;
+    cursor: pointer;
+}
+
+.songitemContainer {
+    margin-top: 34px;
 }
 
 .songitem {
@@ -94,3 +99,13 @@ nav ul li {
     cursor: pointer;
 }
 
+.songInfo {
+    position: absolute;
+    left: 9.5vw;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.songInfo img {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
