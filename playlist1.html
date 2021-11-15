@@ -26,23 +26,23 @@
                 </div>
                 <div class="songitem">
                     <img src="./cover1.jpg" alt="1">
-                    <span class="songName">Asal Mein</span>
-                    <span class="songlistPlay"><span class="timestamp">03:44<i id="1" class="far songItemPlay fa-play-circle"></i></span></span>
+                    <span class="songName">Saari Ki Saari</span>
+                    <span class="songlistPlay"><span class="timestamp">04:06<i id="1" class="far songItemPlay fa-play-circle"></i></span></span>
                 </div>
                 <div class="songitem">
                     <img src="./cover1.jpg" alt="1">
-                    <span class="songName">Asal Mein</span>
-                    <span class="songlistPlay"><span class="timestamp">03:44<i id="2" class="far songItemPlay fa-play-circle"></i></span></span>
+                    <span class="songName">Bhula Dunga</span>
+                    <span class="songlistPlay"><span class="timestamp">03:16<i id="2" class="far songItemPlay fa-play-circle"></i></span></span>
                 </div>
                 <div class="songitem">
                     <img src="./cover1.jpg" alt="1">
-                    <span class="songName">Asal Mein</span>
-                    <span class="songlistPlay"><span class="timestamp">03:44<i id="3" class="far songItemPlay fa-play-circle"></i></i></span></span>
+                    <span class="songName">Yaara Teri Yaari</span>
+                    <span class="songlistPlay"><span class="timestamp">02:56<i id="3" class="far songItemPlay fa-play-circle"></i></i></span></span>
                 </div>
                 <div class="songitem">
                     <img src="./cover1.jpg" alt="1">
-                    <span class="songName">Asal Mein</span>
-                    <span class="songlistPlay"><span class="timestamp">03:44<i id="4" class="far songItemPlay fa-play-circle"></i></span></span>
+                    <span class="songName">Baarish Lete Aana</span>
+                    <span class="songlistPlay"><span class="timestamp">03:33<i id="4" class="far songItemPlay fa-play-circle"></i></span></span>
                 </div>  
             </div>
         </div>
@@ -123,7 +123,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
     element.addEventListener('click', (e)=>{
         makeAllPlays();
         songIndex = parseInt(e.target.id);
-        e.target.clssList.remove('fa-fa-circle');
+        e.target.classList.remove('fa-fa-circle');
         e.target.classList.add('fa-pause-circle');
         audioElement.src = `songs/${songIndex+1}.mp3`;
         masterSongName.innerText = songs[songIndex].songName;
