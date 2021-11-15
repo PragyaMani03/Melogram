@@ -2,19 +2,19 @@ console.log("Welcome to Melogram");
 
 // Initialize the Variables
 let songIndex = 0;
-let audioElement = new Audio('AsalMein.mp3');
+let audioElement = new Audio('DarshanRaval/AsalMein.mp3');
 let masterPlay = document.getElementById('masterPlay');
-let myProgressBar = documemt.getElementById('myProgressBar');
+let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
 let masterSongName = document.getElementById('masterSongName');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
 
 let songs = [
-    {songName: "Asal Mein", filepath: "D:\Melogram\Melogram\DarshanRaval\AsalMein.mp3", coverPath: "cover1.jpg"},
-    {songName: "Saari Ki Saari", filepath: "Darshan Raval/Saari Ki Saari - Darshan Raval.mp3", coverPath: "cover1.jpg"},
-    {songName: "Bhula Dunga", filepath: "Darshan Raval/Bhula Dunga - Darshan Raval.mp3", coverPath: "cover1.jpg"},
-    {songName: "Yaara Teri Yaari", filepath: "Darshan Raval/Yaara Teri Yaari - Darshan Raval.mp3", coverPath: "cover1.jpg"},
-    {songName: "Baarish Lete Aana", filepath: "Darshan Raval/Baarish Lete Aana - Darshan Raval.mp3", coverPath: "cover1.jpg"},
+    {songName: "Asal Mein", filepath: "DarshanRaval/AsalMein.mp3", coverPath: "cover1.jpg"},
+    {songName: "Saari Ki Saari", filepath: "DarshanRaval/SaariKiSaari.mp3", coverPath: "cover1.jpg"},
+    {songName: "Bhula Dunga", filepath: "DarshanRaval/BhulaDunga.mp3", coverPath: "cover1.jpg"},
+    {songName: "Yaara Teri Yaari", filepath: "DarshanRaval/YaaraTeriYaari.mp3", coverPath: "cover1.jpg"},
+    {songName: "Baarish Lete Aana", filepath: "DarshanRaval/BLA.mp3", coverPath: "cover1.jpg"},
 ]
 
 songItems.forEach((element, i)=>{
@@ -100,3 +100,4 @@ document.getElementById('previous').addEventListener('click', ()=>{
     masterPlay.classList.remove('fa-play-circle');
     masterPlay.classList.add('fa-pause-cicle');
 })
+
