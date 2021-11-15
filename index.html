@@ -1,12 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=1, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=1, initial-scale=1.0" />
+    <title>Melogram - One place to Chat and Vibe</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Ubuntu&display=swap');
     
-</body>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: black;
+      }
+
+      nav {
+        font-family: "ubuntu", sans-serif;
+      }
+
+      nav ul {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        height: 80px;
+        background-color: black;
+        color: white;
+        font-family: "ubuntu";
+        font-size: large;
+      }
+
+      nav ul li {
+        padding: 0 30px;
+      }
+
+      .brand img {
+        width: 235px;
+      }
+
+      .banner {
+        width: 90%;
+        height: 100vh;
+        padding-left: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="header">
+      <ul>
+        <li class="brand"><img src="./logo1.png" alt="Melogram" /></li>
+        <li>Sign Up</li>
+        <li>Sign In</li>
+      </ul>
+    </nav>
+    <img class="banner" src="./banner1.png" alt="banner" />
+  </body>
 </html>
