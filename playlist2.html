@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melogram - One place to Chat and Vibe</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .container {
+         background-image: url('./backgrounds/Armaan.png');
+        background-repeat: no-repeat;
+        background-size: 50% 115%;
+        background-position: right 5% bottom 5% ;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -20,29 +28,29 @@
             <h1>Best Of Armaan Malik</h1>
             <div class="songitemContainer">
                 <div class="songitem">
-                    <img src="./" alt="1">
-                    <span class="songName">Asal Mein</span>
-                    <span class="songlistPlay"><span class="timestamp">03:44<i id="0" class="far songItemPlay fa-play-circle"></i></span></span>
+                    <img src="./ArmaanCover.png" alt="1">
+                    <span class="songName">Tere Mere - Chef</span>
+                    <span class="songlistPlay"><span class="timestamp">05:43<i id="0" class="far songItemPlay fa-play-circle"></i></span></span>
                 </div>
                 <div class="songitem">
-                    <img src="./cover1.jpg" alt="1">
-                    <span class="songName">Saari Ki Saari</span>
-                    <span class="songlistPlay"><span class="timestamp">04:06<i id="1" class="far songItemPlay fa-play-circle"></i></span></span>
+                    <img src="./ArmaanCover.png" alt="1">
+                    <span class="songName">Bol Do Na Zara - Azhar</span>
+                    <span class="songlistPlay"><span class="timestamp">04:53<i id="1" class="far songItemPlay fa-play-circle"></i></span></span>
                 </div>
                 <div class="songitem">
-                    <img src="./cover1.jpg" alt="1">
-                    <span class="songName">Bhula Dunga</span>
-                    <span class="songlistPlay"><span class="timestamp">03:16<i id="2" class="far songItemPlay fa-play-circle"></i></span></span>
+                    <img src="./ArmaanCover.png" alt="1">
+                    <span class="songName">Kuch To Hai - Do lafzon Ki Kahani</span>
+                    <span class="songlistPlay"><span class="timestamp">04:08<i id="2" class="far songItemPlay fa-play-circle"></i></span></span>
                 </div>
                 <div class="songitem">
-                    <img src="./cover1.jpg" alt="1">
-                    <span class="songName">Yaara Teri Yaari</span>
-                    <span class="songlistPlay"><span class="timestamp">02:56<i id="3" class="far songItemPlay fa-play-circle"></i></i></span></span>
+                    <img src="./ArmaanCover.png" alt="1">
+                    <span class="songName">Main Rahoon Ya Na Rahoon</span>
+                    <span class="songlistPlay"><span class="timestamp">05:09<i id="3" class="far songItemPlay fa-play-circle"></i></i></span></span>
                 </div>
                 <div class="songitem">
-                    <img src="./cover1.jpg" alt="1">
-                    <span class="songName">Baarish Lete Aana</span>
-                    <span class="songlistPlay"><span class="timestamp">03:33<i id="4" class="far songItemPlay fa-play-circle"></i></span></span>
+                    <img src="./ArmaanCover.png" alt="1">
+                    <span class="songName">Tootey Khaab</span>
+                    <span class="songlistPlay"><span class="timestamp">03:29<i id="4" class="far songItemPlay fa-play-circle"></i></span></span>
                 </div>  
             </div>
         </div>
@@ -56,7 +64,7 @@
             <i class="fas fa-3x fa-step-forward" id="next"></i>
         </div>
         <div class="songInfo"> 
-            <img src="./playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">Asal Mein - Darshan raval</span>
+            <img src="./playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">Tere Mere - Armaan Malik</span>
         </div>
     </div>
     <!-- <script src="./script.js"></script> -->
@@ -66,7 +74,7 @@
 
 // Initialize the Variables
 let songIndex = 0;
-let audioElement = new Audio('songs/1.mp3');
+let audioElement = new Audio('ArmaanMalik/1.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
@@ -74,11 +82,11 @@ let masterSongName = document.getElementById('masterSongName');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
 
 let songs = [
-    {songName: "Asal Mein", filepath: "songs/1.mp3", coverPath: "cover1.jpg"},
-    {songName: "Saari Ki Saari", filepath: "songs/2.mp3", coverPath: "cover1.jpg"},
-    {songName: "Bhula Dunga", filepath: "songs/3.mp3", coverPath: "cover1.jpg"},
-    {songName: "Yaara Teri Yaari", filepath: "songs/4.mp3", coverPath: "cover1.jpg"},
-    {songName: "Baarish Lete Aana", filepath: "songs/5.mp3", coverPath: "cover1.jpg"},
+    {songName: "Tere Mere", filepath: "ArmaanMalik/1.mp3", coverPath: "ArmaanCover.png"},
+    {songName: "Bol Do Na Zara", filepath: "ArmaanMalik/2.mp3", coverPath: "cover1.jpg"},
+    {songName: "Kuch To Hai", filepath: "ArmaanMalik/3.mp3", coverPath: "cover1.jpg"},
+    {songName: "Main Rahoon Ya Na Rahoon", filepath: "ArmaanMalik/4.mp3", coverPath: "cover1.jpg"},
+    {songName: "Tootey Khaab", filepath: "ArmaanMalik/5.mp3", coverPath: "cover1.jpg"},
 ]
 
 songItems.forEach((element, i)=>{
@@ -125,7 +133,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         songIndex = parseInt(e.target.id);
         e.target.classList.remove('fa-fa-circle');
         e.target.classList.add('fa-pause-circle');
-        audioElement.src = `songs/${songIndex+1}.mp3`;
+        audioElement.src = `ArmaanMalik/${songIndex+1}.mp3`;
         masterSongName.innerText = songs[songIndex].songName;
         audioElement.currentTime = 0;
         audioElement.play();
@@ -142,7 +150,7 @@ document.getElementById('next').addEventListener('click',()=>{
     else{
         songIndex += 1;
     }
-    audioElement.src = `songs/${songIndex+1}.mp3`;
+    audioElement.src = `ArmaanMalik/${songIndex+1}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
@@ -157,7 +165,7 @@ document.getElementById('previous').addEventListener('click', ()=>{
     else{
         songIndex -= 1;
     }
-    audioElement.src = `songs/${songIndex+1}.mp3`;
+    audioElement.src = `ArmaanMalik/${songIndex+1}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
