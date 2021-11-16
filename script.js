@@ -59,7 +59,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
     element.addEventListener('click', (e)=>{
         makeAllPlays();
         songIndex = parseInt(e.target.id);
-        e.target.clssList.remove('fa-fa-circle');
+        e.target.classList.remove('fa-fa-circle');
         e.target.classList.add('fa-pause-circle');
         audioElement.src = `songs/${songIndex+1}.mp3`;
         masterSongName.innerText = songs[songIndex].songName;
