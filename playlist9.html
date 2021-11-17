@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .container {
-         background-image: url('./backgrounds/EdSheeran.png');
+         background-image: url('./backgrounds/Harry.jpeg');
         background-repeat: no-repeat;
-        background-size: 60% 100%;
-        background-position: right -20% bottom 5% ;
+        background-size: 60% 110%;
+        background-position: right 5% bottom 5% ;
         }
     </style>
 </head>
@@ -25,32 +25,32 @@
     </nav>
     <div class="container">
         <div class="songList">
-            <h1>Best Of Ed Sheeran</h1>
+            <h1>Best Of Harry Styles</h1>
             <div class="songitemContainer">
                 <div class="songitem">
                     <img src="./cover1.jpg" alt="1">
-                    <span class="songName">Perfect</span>
-                    <span class="songlistPlay"><span class="timestamp">04:23<i id="0" class="far songItemPlay fa-play-circle"></i></span></span>
+                    <span class="songName">Falling</span>
+                    <span class="songlistPlay"><span class="timestamp">03:51<i id="0" class="far songItemPlay fa-play-circle"></i></span></span>
                 </div>
                 <div class="songitem">
                     <img src="./cover1.jpg" alt="1">
-                    <span class="songName">Shape Of You</span>
-                    <span class="songlistPlay"><span class="timestamp">04:23<i id="1" class="far songItemPlay fa-play-circle"></i></span></span>
+                    <span class="songName">WaterMelon Sugar</span>
+                    <span class="songlistPlay"><span class="timestamp">03:44<i id="1" class="far songItemPlay fa-play-circle"></i></span></span>
                 </div>
                 <div class="songitem">
                     <img src="./cover1.jpg" alt="1">
-                    <span class="songName">Shivers</span>
-                    <span class="songlistPlay"><span class="timestamp">03:26<i id="2" class="far songItemPlay fa-play-circle"></i></span></span>
+                    <span class="songName">Adore You</span>
+                    <span class="songlistPlay"><span class="timestamp">03:28<i id="2" class="far songItemPlay fa-play-circle"></i></span></span>
                 </div>
                 <div class="songitem">
                     <img src="./cover1.jpg" alt="1">
-                    <span class="songName">Bad Habits</span>
-                    <span class="songlistPlay"><span class="timestamp">04:01<i id="3" class="far songItemPlay fa-play-circle"></i></i></span></span>
+                    <span class="songName">Sign Of The Times</span>
+                    <span class="songlistPlay"><span class="timestamp">05:41<i id="3" class="far songItemPlay fa-play-circle"></i></i></span></span>
                 </div>
                 <div class="songitem">
                     <img src="./cover1.jpg" alt="1">
-                    <span class="songName">Photograph</span>
-                    <span class="songlistPlay"><span class="timestamp">04:24<i id="4" class="far songItemPlay fa-play-circle"></i></span></span>
+                    <span class="songName">Little Things</span>
+                    <span class="songlistPlay"><span class="timestamp">03:39<i id="4" class="far songItemPlay fa-play-circle"></i></span></span>
                 </div>  
             </div>
         </div>
@@ -64,7 +64,7 @@
             <i class="fas fa-3x fa-step-forward" id="next"></i>
         </div>
         <div class="songInfo"> 
-            <img src="./playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">Perfect - Ed Sheeran</span>
+            <img src="./playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">Falling - Harry Styles</span>
         </div>
     </div>
     <!-- <script src="./script.js"></script> -->
@@ -74,7 +74,7 @@
 
 // Initialize the Variables
 let songIndex = 0;
-let audioElement = new Audio('EdSheeran/1.mp3');
+let audioElement = new Audio('Harry/1.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
@@ -82,11 +82,11 @@ let masterSongName = document.getElementById('masterSongName');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
 
 let songs = [
-    {songName: "Perfect", filepath: "EdSheeran/1.mp3", coverPath: "cover1.jpg"},
-    {songName: "Shape Of You", filepath: "EdSheeran/2.mp3", coverPath: "cover1.jpg"},
-    {songName: "Shivers", filepath: "EdSheeran/3.mp3", coverPath: "cover1.jpg"},
-    {songName: "Bad Habits", filepath: "EdSheeran/4.mp3", coverPath: "cover1.jpg"},
-    {songName: "Photograph", filepath: "EdSheeran/5.mp3", coverPath: "cover1.jpg"},
+    {songName: "Falling", filepath: "Harry/1.mp3", coverPath: "cover1.jpg"},
+    {songName: "WaterMelon Sugar", filepath: "Harry/2.mp3", coverPath: "cover1.jpg"},
+    {songName: "Adore You", filepath: "Harry/3.mp3", coverPath: "cover1.jpg"},
+    {songName: "Sign Of The Time", filepath: "Harry/4.mp3", coverPath: "cover1.jpg"},
+    {songName: "Little Things", filepath: "Harry/5.mp3", coverPath: "cover1.jpg"},
 ]
 
 songItems.forEach((element, i)=>{
@@ -133,7 +133,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         songIndex = parseInt(e.target.id);
         e.target.classList.remove('fa-fa-circle');
         e.target.classList.add('fa-pause-circle');
-        audioElement.src = `EdSheeran/${songIndex+1}.mp3`;
+        audioElement.src = `Harry/${songIndex+1}.mp3`;
         masterSongName.innerText = songs[songIndex].songName;
         audioElement.currentTime = 0;
         audioElement.play();
@@ -150,7 +150,7 @@ document.getElementById('next').addEventListener('click',()=>{
     else{
         songIndex += 1;
     }
-    audioElement.src = `EdSheeran/${songIndex+1}.mp3`;
+    audioElement.src = `Harry/${songIndex+1}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
@@ -165,7 +165,7 @@ document.getElementById('previous').addEventListener('click', ()=>{
     else{
         songIndex -= 1;
     }
-    audioElement.src = `EdSheeran/${songIndex+1}.mp3`;
+    audioElement.src = `Harry/${songIndex+1}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
