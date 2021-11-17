@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Pacifico&family=Patua+One&display=swap');
 body {
     background-color: antiquewhite;
 }
@@ -9,7 +10,7 @@ body {
 }
 
 nav {
-    font-family: 'ubuntu', sans-serif;
+    font-family: 'Acme', sans-serif;
 }
 
 nav ul {
@@ -19,11 +20,12 @@ nav ul {
     height: 65px;
     background-color: black;
     color: white;
-    font-family: 'Varela Round', sans-serif; 
+    font-family: 'Acme', sans-serif; 
+    font-size: 120%;
 }
  
 nav ul li {
-    padding: 0 12px;  
+    padding: 0 20px;  
 }
 
 .brand img {
