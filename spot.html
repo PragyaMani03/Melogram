@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Swiper demo</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7.2.0/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="spot.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+</head>
+
+<body>
+    <div class="sidebar">
+        <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a><hr>
+        <a href="#services"><i class="fa fa-fw fa-wrench"></i> Premium</a><hr>
+        <a href="#clients"><i class="fa fa-fw fa-user"></i> Upgrade</a><hr>
+        <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a><hr>
+      </div>
+    <header>
+        <i class="fas fa-cog"></i>
+    </header>
+  <!-- Swiper -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" ><img src="https://static.toiimg.com/photo/msid-87358511/87358511.jpg?58392
+        "> </div>
+      <div class="swiper-slide" ><img src="https://i.ytimg.com/vi/FZYYhofbaok/maxresdefault.jpg"></div>
+     <div class="swiper-slide" ><img src="http://www.stunmore.com/uploads/9/0/2/4/90246451/236867655_orig.jpg"> </div>
+     <div class="swiper-slide" ><img src="https://pagalnew.com/coverimages/Dil-Galti-Kar-Baitha-Hai-Feat.-Mouni-Roy-Jubin-Nautiyal-500-500.jpg"> </div>
+     <div class="swiper-slide" ><img src="https://dev-resws-hungamatech-com.storage.googleapis.com/featured_content/f0bf7bd0427603879be04cb9fc2c97a4_500x500.jpg"> </div>
+     <div class="swiper-slide" ><img src="https://i.scdn.co/image/ab67616d0000b27371ccd1726e02e36f3fe6f5b6"> </div>
+     <div class="swiper-slide" ><img src="https://img.wynk.in/unsafe/275x275/filters:no_upscale():format(jpg)/http://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/6133b1609fa0c244a1efb3f2/COLLECTION_91853008618926.jpg"> </div>
+     <div class="swiper-slide" ><img src="https://wallpaperaccess.com/full/3846515.jpg"> </div>
+     <div class="swiper-slide" ><img src="https://i.ytimg.com/vi/vaQMd1euvbI/maxresdefault.jpg"> </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+      </div>
+
+  <script src="https://unpkg.com/swiper@7.2.0/swiper-bundle.min.js"></script>
+  <script type="module">
+    import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js'
+    const swiper1 = new Swiper(3);
+
+  
+    var swiper = new Swiper('.swiper', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 20,
+        stretch: 0,
+        depth: 200,
+        modifier: 1,
+        slideShadows: true,
+      },
+      loop:true,
+    });
+  </script>
+  <section class="topsection">
+    <h1 style="padding-top: 19vh;">Artists</h1>
+<div class="boxexs">
+  <div class="box">
+      <div class="boximg"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtl-TmCrhbMdXU3HE7rd2taBklvLMMGmeQsA&usqp=CAU" alt=""></div>
+        <div class="boxtitle">Atif Aslam</div>
+  </div>
+  <div class="box">
+    <div class="boximg"><img src="https://imagevars.gulfnews.com/2021/05/23/Shreya-Ghoshal_1799987590f_original-ratio.jpg" alt=""></div>
+      <div class="boxtitle">Shreya Ghoshal</div>
+</div>
+<div class="box">
+    <div class="boximg"><img src="data:image/jpeg;base64,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" alt=""></div>
+      <div class="boxtitle">Selena gomez</div>
+</div>
+<div class="box">
+    <div class="boximg"><img src="https://qph.fs.quoracdn.net/main-qimg-5a4bba68d09f7f930347736b9033c91f-lq" alt=""></div>
+      <div class="boxtitle">Zayn Malik</div>
+</div>
+<div class="box">
+    <div class="boximg"><img src="https://i.insider.com/5bc79179fc7e160bf846da82?width=700" alt=""></div>
+      <div class="boxtitle">Ariana Grande</div>
+</div>
+<div class="box">
+    <div class="boximg"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS2IJJMPZ4bvAjZ9Lwr-ZHhqDIZltnUM8glw&usqp=CAU" alt=""></div>
+      <div class="boxtitle">Camila Cabello</div>
+</div>
+<div class="box">
+    <div class="boximg"><img src="https://i.pinimg.com/474x/55/70/5f/55705f0d1506381f8ed0ca385e0b3075.jpg" alt=""></div>
+      <div class="boxtitle">Darshan Raval</div>
+</div>
+<div class="box">
+    <div class="boximg"><img src="https://www.deccanherald.com/sites/dh/files/article_images/2018/10/09/file728wm22kjno1fbnx8e9.jpg" alt=""></div>
+      <div class="boxtitle">Armaan Malik</div>
+</div>
+<div class="box">
+  <div class="boximg"><img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2018/03/23/664072-arijit-singh.jpg" alt=""></div>
+    <div class="boxtitle">Arijit Singh</div>
+</div>
+<div class="box">
+  <div class="boximg"><img src="https://i.pinimg.com/564x/84/85/00/84850061f955bacaef999fe88356e5c3.jpg" alt=""></div>
+    <div class="boxtitle">Jass Manak</div>
+</div>
+<div class="box">
+  <div class="boximg"><img src="https://m.media-amazon.com/images/M/MV5BMTUxMzU2MTk1OF5BMl5BanBnXkFtZTgwNzg4NjAwMzI@._V1_.jpg" alt=""></div>
+    <div class="boxtitle">Harry Styles</div>
+</div>
+<div class="box">
+  <div class="boximg"><img src="https://media1.popsugar-assets.com/files/thumbor/AK19MHoD8cv7k9tglCxOrwbbf_Y/733x204:2802x2273/fit-in/500x500/filters:format_auto-!!-:strip_icc-!!-/2019/09/04/019/n/1922398/7c2241aa5d7048792c0e23.11693945_/i/Shawn-Mendes.jpg" alt=""></div>
+    <div class="boxtitle">Shawn Mendes</div>
+</div>
+</div>
+<!------------------------------------------------>
+</section>
+<h1>Top hindi Hits</h1>
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="https://naalyrics.com/wp-content/uploads/2021/10/Jugnu.jpg" >
+    <img src="https://i.ytimg.com/vi/Fp8nRCgWfw4/maxresdefault.jpg" >
+    <img src="https://static.toiimg.com/photo/msid-87358511/87358511.jpg?58392" >
+    <img src="https://paglasongs.com/uploads/thumb/sft9/4128_4.jpg" >
+    <img src="https://pagalnew.com/coverimages/Tanha-Dil-Tanha-Safar-Shaan-500-500.jpg" >
+    <div class="text"></div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="https://pagalfree.com/images/128Tenu%20Lehenga%20-%20Satyameva%20Jayate%202%20128%20Kbps.jpg" >
+    <img src="https://i.scdn.co/image/ab67616d0000b273b8708b3208a583480ee4dc74" >
+    <img src="https://i.ytimg.com/vi/mm1KPOWBtv8/maxresdefault.jpg">
+    <img src="https://mobstatus.com/wp-content/uploads/2021/11/tumse-bhi-zyada.jpg">
+    <img src="https://lyricsworldyou.com/wp-content/uploads/2021/09/CHITTA-LYRICS-Shiddat-Manan-Bhardwaj-1.jpg">
+  
+  
+  </div>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+  </div>
+  <br>
+  
+  
+  
+  <script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    
+    slides[slideIndex-1].style.display = "block";  
+  }
+  </script>
+  
+    <!----------------------------------------------------------------------->
+    <h1>Top English Hits</h1>
+    <div class="slideshow-container1">
+
+      <div class="mySlides1 fade1">
+        <div class="numbertext1"></div>
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/5e/Who_Says.jpg" >
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Alexander_fairytale.jpg/220px-Alexander_fairytale.jpg" >
+        <img src="https://c-cl.cdn.smule.com/rs-s43/arr/8c/15/130235b9-0f4c-4dbb-822d-d9e660dba69c_1024.jpg" >
+        <img src="https://i.scdn.co/image/ab67616d0000b27350dba34377a595e35f81b0e4" >
+        <img src="https://i.pinimg.com/564x/b5/5d/c4/b55dc4d81b8affdac2035ba4f607b4f3.jpg" >
+        <div class="https://i.scdn.co/image/ab67616d0000b2732751f15ff6c8174e540b6fb4"></div>
+      </div>
+      
+      <div class="mySlides1 fade1">
+        <div class="numbertext1"></div>
+        <img src="https://i.scdn.co/image/ab67616d0000b2732751f15ff6c8174e540b6fb4" >
+        <img src="https://i.ytimg.com/vi/nhwIdvXVDsE/maxresdefault.jpg" >
+        <img src="https://img.wynk.in/unsafe/275x275/filters:no_upscale():format(jpg)/http://s3-ap-south-1.amazonaws.com/wynk-music-cms/srch_hungama/music/859747921099/1621591819/srch_hungama_66410440.jpg" >
+        <img src="https://depauliaonline.com/wp-content/uploads/2021/04/lil-nas-x-montero.jpg" >
+        <img src="https://upload.wikimedia.org/wikipedia/en/f/f7/Lil_Nas_X_-_Industry_Baby.png" >
+        
+      
+      
+      </div>
+      <a class="prev1" onclick="plusSlides1(-1)">&#10094;</a>
+      <a class="next1" onclick="plusSlides1(1)">&#10095;</a>
+      
+      </div>
+      <br>
+      
+      
+      
+      <script>
+      var slideIndex1 = 1;
+      showSlides1(slideIndex1);
+      
+      function plusSlides1(n) {
+        showSlides1(slideIndex1 += n);
+      }
+      
+      function currentSlide1(n) {
+        showSlides1(slideIndex1 = n);
+      }
+      
+      function showSlides1(n) {
+        var i;
+        var slides1 = document.getElementsByClassName("mySlides1");
+        if (n > slides1.length) {slideIndex1 = 1}    
+        if (n < 1) {slideIndex1 = slides1.length}
+        for (i = 0; i < slides1.length; i++) {
+            slides1[i].style.display = "none";  
+        }
+        
+        slides1[slideIndex1-1].style.display = "block";  
+        
+      }
+      </script>
+  <!--------------------------------------------------------------------------------------------->
+<h1>Top Hits</h1>
+<div class="slideshow-container2">
+
+  <div class="mySlides2 fade2">
+    <div class="numbertext2"></div>
+    <img src="https://i.scdn.co/image/ab67616d0000b273b212e660aec81b60a425d4f1" >
+    <img src="https://img.wynk.in/unsafe/275x275/filters:no_upscale():format(jpg)/http://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/602a05642abf920cf5d07654/COLLECTION_10466410394714.png" >
+    <img src="https://c.saavncdn.com/754/Top-20-Romantic-Songs-2018-Hindi-2018-20181226104238-500x500.jpg" >
+    <img src="https://img.wynk.in/unsafe/275x275/filters:no_upscale():format(jpg)/http://s3.ap-south-1.amazonaws.com/discovery-prod-arsenal/arsenal/artworks/614c4056bea6d1159b2ab206/COLLECTION_364310918305348.jpeg" >
+    <img src="https://i.ytimg.com/vi/YnUHbC7x9xA/maxresdefault.jpg" >
+    <div class="text"></div>
+  </div>
+  
+  <div class="mySlides2 fade2">
+    <div class="numbertext2"></div>
+    <img src="https://i.ytimg.com/vi/5-5m2esBGbk/maxresdefault.jpg" >
+    <img src="https://rollingstoneindia.com/wp-content/uploads/2020/12/0001-14838978349_20201225_201534_0000-e1608914980797-960x917.png" >
+    <img src="https://i.ytimg.com/vi/4V4E16OlXk0/hqdefault.jpg">
+    <img src="https://i.ytimg.com/vi/TU9gFncx80A/maxresdefault.jpg">
+    <img src="https://images-na.ssl-images-amazon.com/images/I/51Y91iJRFFL.jpg">
+  
+  
+  </div>
+  <a class="prev2" onclick="plusSlides2(-1)">&#10094;</a>
+  <a class="next2" onclick="plusSlides2(1)">&#10095;</a>
+  
+  </div>
+  <br>
+  <script>
+  var slideIndex2 = 1;
+  showSlides2(slideIndex2);
+  
+  function plusSlides2(n) {
+    showSlides2(slideIndex2 += n);
+  }
+  
+  function currentSlide2(n) {
+    showSlides2(slideIndex2 = n);
+  }
+  
+  function showSlides2(n) {
+    var i;
+    var slides2 = document.getElementsByClassName("mySlides2");
+    if (n > slides2.length) {slideIndex2 = 1}    
+    if (n < 1) {slideIndex2 = slides2.length}
+    for (i = 0; i < slides2.length; i++) {
+        slides2[i].style.display = "none";  
+    }
+    
+    slides2[slideIndex2-1].style.display = "block";  
+  }
+  </script>
+      <!------------------------------------------------------------------------>
+</body>
+</html>
