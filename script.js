@@ -1,103 +1,46 @@
-console.log("Welcome to Melogram");
-
-// Initialize the Variables
-let songIndex = 0;
-let audioElement = new Audio('DarshanRaval/AsalMein.mp3');
-let masterPlay = document.getElementById('masterPlay');
-let myProgressBar = document.getElementById('myProgressBar');
-let gif = document.getElementById('gif');
-let masterSongName = document.getElementById('masterSongName');
-let songItems = Array.from(document.getElementsByClassName('songItem'));
-
-let songs = [
-    {songName: "Asal Mein", filepath: "DarshanRaval/AsalMein.mp3", coverPath: "cover1.jpg"},
-    {songName: "Saari Ki Saari", filepath: "DarshanRaval/SaariKiSaari.mp3", coverPath: "cover1.jpg"},
-    {songName: "Bhula Dunga", filepath: "DarshanRaval/BhulaDunga.mp3", coverPath: "cover1.jpg"},
-    {songName: "Yaara Teri Yaari", filepath: "DarshanRaval/YaaraTeriYaari.mp3", coverPath: "cover1.jpg"},
-    {songName: "Baarish Lete Aana", filepath: "DarshanRaval/BLA.mp3", coverPath: "cover1.jpg"},
-]
-
-songItems.forEach((element, i)=>{
-    element.getElementsByTagName("img")[0].src = songs[i].coverPath;
-    element.getElementsByClassName("songName")[0].innerText = songs[i].songName;
-})
-
-//Handle play/pause click
-masterPlay.addEventListener('click', ()=>{
-    if(audioElement.paused || audioElement.currentTime<=0){
-        audioElement.play();
-        masterPlay.classList.remove('fa-play-circle');
-        masterPlay.classList.add('fa-pause-circle');
-        gif.style.opacity = 1;
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+  
+      document.getElementById("user_div").style.display = "block";
+      document.getElementById("login_div").style.display = "none";
+  
+      var user = firebase.auth().currentUser;
+  
+      if(user != null){
+  
+        var email_id = user.email;
+        document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
+  
+      }
+  
+    } else {
+      // No user is signed in.
+  
+      document.getElementById("user_div").style.display = "none";
+      document.getElementById("login_div").style.display = "block";
+  
     }
-    else {
-        audioElement.pause();
-        masterPlay.classList.remove('fa-pause-circle');
-        masterPlay.classList.add('fa-play-circle');
-        gif.style.opacity = 0;
-    }
-})
-//Listen to Events
-audioElement.addEventListener('timeupdate', ()=>{
-    //update seekbar
-    progress = parseInt((audioElement.currentTime/audioElement.duration)* 100);
-    myProgressBar.value = progress;
-})
-
-myProgressBar.addEventListener('change', ()=>{
-    audioElement.currentTime = myProgressBar.value * audioElement.duration/100;
-})
-
-const makeAllPlays = ()=>{
-    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
-        element.classList.remove('fa-pause-circle');
-        element.classList.add('fa-play-circle');
-    })
-}
-
-Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
-    element.addEventListener('click', (e)=>{
-        makeAllPlays();
-        songIndex = parseInt(e.target.id);
-        e.target.classList.remove('fa-fa-circle');
-        e.target.classList.add('fa-pause-circle');
-        audioElement.src = `songs/${songIndex+1}.mp3`;
-        masterSongName.innerText = songs[songIndex].songName;
-        audioElement.currentTime = 0;
-        audioElement.play();
-        gif.style.opacity =1;
-        masterPlay.classList.remove('fa-play-circle');
-        masterPlay.classList.add('fa-pause-circle');
-    })
-})
-
-document.getElementById('next').addEventListener('click',()=>{
-    if(songIndex>=9) {
-        songIndex = 0
-    }
-    else{
-        songIndex += 1;
-    }
-    audioElement.src = `songs/${songIndex+1}.mp3`;
-    masterSongName.innerText = songs[songIndex].songName;
-    audioElement.currentTime = 0;
-    audioElement.play();
-    masterPlay.classList.remove('fa-play-circle');
-    masterPlay.classList.add('fa-pause-circle');
-})
-
-document.getElementById('previous').addEventListener('click', ()=>{
-    if(songIndex<=0){
-        songIndex = 0
-    }
-    else{
-        songIndex -= 1;
-    }
-    audioElement.src = `songs/${songIndex+1}.mp3`;
-    masterSongName.innerText = songs[songIndex].songName;
-    audioElement.currentTime = 0;
-    audioElement.play();
-    masterPlay.classList.remove('fa-play-circle');
-    masterPlay.classList.add('fa-pause-cicle');
-})
-
+  });
+  
+  function login(){
+  
+    var userEmail = document.getElementById("email_field").value;
+    var userPass = document.getElementById("password_field").value;
+  
+    firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+  
+      window.alert("Error : " + errorMessage);
+  
+      // ...
+    });
+  
+  }
+  
+  function logout(){
+    firebase.auth().signOut();
+  }
+  
