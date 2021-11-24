@@ -42,12 +42,12 @@ usersRef.on('child_added', snapshot => {
 });
 
 document.getElementById("addBtn").onclick = function(){
-    location.href = "profile.html";
+    location.href = "homepage.html";
     // document.getElementById("user").innerHTML = snapshot.val()[5];
 }
 
 document.getElementById("updateBtn").onclick = function(){
-    location.href = "profile.html";
+    location.href = "homepage.html";
     // document.getElementById("user").innerHTML = snapshot.val()[5];
 }
 
