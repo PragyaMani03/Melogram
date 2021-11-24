@@ -1,0 +1,22 @@
+input{
+    width:70%;
+    font-size: 25px;
+    
+}
+#des{
+    height: 70px;
+}
+label{
+    font-size: 25px;
+    color:rgb(136, 138, 116);
+}
+button
+{
+    color: brown;
+    border-style: groove;
+    padding: 15px;
+}
+h1
+{
+    font-style: bold;
+}
