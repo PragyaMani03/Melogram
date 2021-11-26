@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Melogram - One place to Chat and Vibe</title>
     <link rel="shortcut icon" href="./logo part.png">
+    <script src="https://kit.fontawesome.com/248da48d99.js" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
     <script src=
 "https://code.jquery.com/jquery-3.5.1.js">
     </script>
@@ -13,10 +20,17 @@
       @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
       @import url("https://fonts.googleapis.com/css2?family=Acme&family=Pacifico&family=Patua+One&display=swap");
 
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+       }
+
       body {
         margin: 0;
         font-family: "Lato", sans-serif;
         background-color: black;
+        height: 100vh;
       }
 
       table{
@@ -58,57 +72,10 @@
         border: 2px solid #fff;
       }
 
-      .location p {
-        display: inline-block;
-      }
-
-      .location svg {
-        vertical-align: middle;
-      }
-
-      .stats {
-        display: flex;
-        margin-bottom: 20px;
-      }
-
-      .stats .col-4 {
-        width: 10rem;
-        text-align: center;
-      }
-
       .heading {
         font-weight: 400;
         font-size: 1.3rem;
         margin: 1rem 0;
-      }
-
-      .playlists-layout {
-        width: 100%;
-        height: 38%;
-        float: right;
-        padding-left: 3%;
-      }
-
-      .playlist {
-        width: 80%;
-        height: 31%;
-        background-color: rgba(59, 58, 58, 0.7);
-        margin-bottom: 20px;
-        margin-left: 10%;
-        position: relative;
-      }
-
-      .cover {
-        line-height: 15vh;
-        display: inline-flex;
-        color: white;
-        position: absolute;
-        margin-left: 35%;
-      }
-
-      .playlist-cover img {
-        height: 31%;
-        width: 12.6%;
       }
 
       nav {
@@ -119,7 +86,7 @@
         display: flex;
         align-items: center;
         list-style-type: none;
-        height: 30px;
+        height: 50px;
         background-color: black;
         color: white;
         font-family: "Acme", sans-serif;
@@ -128,6 +95,8 @@
 
       nav ul li {
         padding: 0 20px;
+        margin-top: 20px;
+        margin-bottom: 10px;
       }
 
       nav ul li a{
@@ -139,6 +108,7 @@
       nav ul li a:hover{
         background-color: white;
         color: black;
+        text-decoration: none;
       }
 
       .brand img {
@@ -164,43 +134,223 @@
             alt="User"
             class="profile-pic"
           />
-         
-          <table id="table">
-          <script>
-            $(document).ready(function () {
-
-                // FETCHING DATA FROM JSON FILE
-                $.getJSON("userdata.json", 
-                        function (data) {
-                    var student = '';
-
-                    // ITERATING THROUGH OBJECTS
-                    $.each(data, function (key, value) {
-
-                        //CONSTRUCTION OF ROWS HAVING
-                        // DATA FROM JSON OBJECT
-                        student += '<tr>';
-                          student += '<td>' + 'User Name : ' + '</td>'
-                        student += '<td>' + 
-                            value.user_name + '</td>';
-                            student += '</tr>';
-
-                            student += '<tr>';
-                              student += '<td>' + 'Room ID : ' + '</td>'
-
-                        student += '<td>' + 
-                            value.room_id + '</td>';
-                            student += '</tr>';                      
-                    });
-                      
-                    //INSERTING ROWS INTO TABLE 
-                    $('#table').append(student);
-                });
-            });
-        </script>
+          <table id="table"></table>    
       </header>
     </section>
     
+    <div class="container-fluid p-3">
+      <h1 class="p-2">Create Playlist</h1>
+      <form
+        onsubmit="return handleCreate(event)"
+        class="d-flex align-items-center p-2"
+      >
+        <!-- <input
+          class="form-control"
+          id="taskTitle"
+          aria-describedby="emailHelp"
+          placeholder="Enter Song Name"
+        /> -->
+        <label for="songs"></label>
+        <select name="PlayList" id="songs" style="height: 5vh; width: 100vw">
+          <option value="">Enter Song Name</option>
+          <option value="Asal Mein">Asal Mein - Darshan Raval</option>
+          <option value="Saari Ki Saari">Saari Ki Saari - Darshan Raval</option>
+          <option value="Bhula Dunga">Bhula Dunga - Darshan Raval</option>
+          <option value="Yaara Teri Yaari">Yaara Teri Yaari - Darshan Raval</option>
+          <option value="Baarish Lete Aana">Baarish Lete Aana - Darshan Raval</option>
+          <option value="Tere Mere">Tere Mere - Armaan Malik</option>
+          <option value="Bol Do Na Zara">Bol Do Na Zara - Armaan Malik</option>
+          <option value="Kuch To Hai">Kuch To Hai - Armaan Malik</option>
+          <option value="Main Rahoon Ya Na Rahoon">Main Rahoon Ya Na Rahoon - Armaan Malik</option>
+          <option value="Tootey Khaab">Tootey Khaab - Armaan Malik</option>
+          <option value="Tere Sang Yaara">Tere Sang Yaara - Atif Aslam</option>
+          <option value="Dekhte Dekhte">Dekhte Dekhte - Atif Aslam</option>
+          <option value="Dil Diyan Gallan">Dil Diyan Gallan - Atif Aslam</option>
+          <option value="Main Rang Sharbatton Ka">Main Rang Sharbatton Ka - Atif Aslam</option>
+          <option value="Jeena Jeena">Jeena Jeena - Atif Aslam</option>
+          <option value="Muskurane">Muskurane - Arijit Singh</option>
+          <option value="Gazab Ka Hai Yeh Din">Gazab Ka Hai Yeh Din - Arijit Singh</option>
+          <option value="Itni Si Baat Hai">Itni Si Baat Hai - Arijit Singh</option>
+          <option value="Mast Magan">Mast Magan - Arijit Singh</option>
+          <option value="Dekha Hazaro Dafaa">Dejha Hazaro Dafaa - Arijit Singh</option>
+          <option value="Prada">Prada - Jass Manak</option>
+          <option value="Lehenga">Lehenga - Jass Manak</option>
+          <option value="Khyal">Khyal - Jass Manak</option>
+          <option value="Rabb Wangu">Rabb Wangu - Jass Manak</option>
+          <option value="Yaara Tere Warga">Yaara Tere Warga - Jass Manak</option>
+        </select>
+        <button type="submit" class="ml-3 btn btn-primary">Add</button>
+      </form>
+      <h1 class="p-2">My Playlist</h1>
+      <div id="tasks" class="p-2 row m-0"></div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+
+          // FETCHING DATA FROM JSON FILE
+          $.getJSON("userdata.json", 
+                  function (data) {
+              var student = '';
+
+              // ITERATING THROUGH OBJECTS
+              $.each(data, function (key, value) {
+
+                  //CONSTRUCTION OF ROWS HAVING
+                  // DATA FROM JSON OBJECT
+                  student += '<tr>';
+                    student += '<td>' + 'User Name : ' + '</td>'
+                  student += '<td>' + 
+                      value.user_name + '</td>';
+                      student += '</tr>';
+
+                      student += '<tr>';
+                        student += '<td>' + 'Room ID : ' + '</td>'
+
+                  student += '<td>' + 
+                      value.room_id + '</td>';
+                      student += '</tr>';                      
+              });
+                
+              //INSERTING ROWS INTO TABLE 
+              $('#table').append(student);
+          });
+      });
+  </script>   
+  <!-- <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-firestore.js"></script> -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+  <script>
+    // variables
+    var fireBase = fireBase || firebase;
+    var hasInit = false;
+    var config = {
+      apiKey: "AIzaSyAQuUFnNWWMfND2y6UaYolVAY2t7aPkeq4",
+        authDomain: "melogram-92ff4.firebaseapp.com",
+        databaseURL: "https://melogram-92ff4-default-rtdb.firebaseio.com",
+        projectId: "melogram-92ff4",
+        storageBucket: "melogram-92ff4.appspot.com",
+        messagingSenderId: "554469691192",
+        appId: "1:554469691192:web:76e7ad2729622bf55a7bcd",
+        measurementId: "G-NFZQ9HM1VC",
+    };
+    if (!hasInit) {
+      firebase.initializeApp(config);
+      hasInit = true;
+    }
+
+    const firestore = firebase.firestore();
+    const tasksDOM = document.getElementById("tasks");
+    const taskInputDOM = document.getElementById("taskTitle");
+
+    // utility functions
+    function cleanData(snapshots) {
+      let data = [];
+      snapshots.forEach(function (doc) {
+        data.push({ id: doc.id, ...doc.data() });
+      });
+      return data;
+    }
+
+    // form functions
+    function handleCreate(event) {
+      event.preventDefault();
+      let task = {
+        name: taskInputDOM.value,
+        status: "incomplete",
+      };
+      return firestore
+        .collection("tasks")
+        .add(task)
+        .then((ref) => {
+          task.id = ref.id;
+          taskInputDOM.value = "";
+          return createTask(task);
+        });
+    }
+
+    function handleStatusUpdate(task) {
+      let updatedTask = {
+        name: task.name,
+        status: "complete",
+      };
+      return firestore
+        .collection("tasks")
+        .doc(task.id)
+        .update(updatedTask)
+        .then((ref) => {
+          document.getElementById(task.id).remove();
+          return createTask(updatedTask);
+        });
+    }
+
+    function handleDelete(id) {
+      return firestore
+        .collection("tasks")
+        .doc(id)
+        .delete()
+        .then((ref) => document.getElementById(id).remove());
+    }
+
+    // dom functions
+    function createTask(task) {
+      const elem = document.createElement("div");
+      elem.setAttribute("id", task.id);
+      elem.setAttribute(
+        "class",
+        "card card-body p-2 col-4 row m-0 flex-row d-flex justify-content-between align-items-center"
+      );
+      let taskElem;
+
+      if (task.status === "incomplete") {
+        taskElem = document.createElement("p");
+        taskElem.setAttribute("class", "m-0 col-7 p-0");
+        taskElem.innerText = task.name;
+      } else {
+        taskElem = document.createElement("s");
+        taskElem.setAttribute("class", "m-0 col-7 p-0");
+        taskElem.innerText = task.name;
+      }
+      elem.append(taskElem);
+
+      if (task.status === "incomplete") {
+        const updateBtn = document.createElement("button");
+        updateBtn.setAttribute(
+          "class",
+          "btn btn-success col-2 text-white mr-1"
+        );
+        // updateBtn.innerHTML =
+        // '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        // updateBtn.addEventListener("click", function () {
+        //   return handleStatusUpdate(task);
+        // });
+        // elem.append(updateBtn);
+      }
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.setAttribute("class", "btn btn-danger col-2 text-white");
+      deleteBtn.innerHTML =
+        '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>';
+      deleteBtn.addEventListener("click", function () {
+        return handleDelete(task.id);
+      });
+      elem.append(deleteBtn);
+
+      tasksDOM.append(elem);
+    }
+
+    // firebase functions
+    function fetchTasks() {
+      return firestore
+        .collection("tasks")
+        .get()
+        .then((snapshots) => cleanData(snapshots))
+        .then((tasks) => tasks.map((task) => createTask(task)));
+    }
+
+    fetchTasks();
+  </script>
   </body>
 </html>
 
