@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Melogram - One place to Chat and Vibe</title>
     <link rel="shortcut icon" href="./logo part.png">
-    <script src=
-"https://code.jquery.com/jquery-3.5.1.js">
+    <script src="https://code.jquery.com/jquery-3.5.1.js">
     </script>
     <style>
       @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
@@ -173,6 +172,54 @@
           </button>
       </header>
     </section>
+        </header>
+      </section>
+      <div class="container-fluid p-3">
+        <h1 class="p-2">Create Playlist</h1>
+        <form
+          onsubmit="return handleCreate(event)"
+          class="d-flex align-items-center p-2"
+        >
+          <!-- <input
+            class="form-control"
+            id="taskTitle"
+            aria-describedby="emailHelp"
+            placeholder="Enter Song Name"
+          /> -->
+          <label for="songs"></label>
+          <select name="PlayList" id="songs" style="height: 5vh; width: 100vw">
+            <option value="">Enter Song Name</option>
+            <option value="Asal Mein">Asal Mein - Darshan Raval</option>
+            <option value="Saari Ki Saari">Saari Ki Saari - Darshan Raval</option>
+            <option value="Bhula Dunga">Bhula Dunga - Darshan Raval</option>
+            <option value="Yaara Teri Yaari">Yaara Teri Yaari - Darshan Raval</option>
+            <option value="Baarish Lete Aana">Baarish Lete Aana - Darshan Raval</option>
+            <option value="Tere Mere">Tere Mere - Armaan Malik</option>
+            <option value="Bol Do Na Zara">Bol Do Na Zara - Armaan Malik</option>
+            <option value="Kuch To Hai">Kuch To Hai - Armaan Malik</option>
+            <option value="Main Rahoon Ya Na Rahoon">Main Rahoon Ya Na Rahoon - Armaan Malik</option>
+            <option value="Tootey Khaab">Tootey Khaab - Armaan Malik</option>
+            <option value="Tere Sang Yaara">Tere Sang Yaara - Atif Aslam</option>
+            <option value="Dekhte Dekhte">Dekhte Dekhte - Atif Aslam</option>
+            <option value="Dil Diyan Gallan">Dil Diyan Gallan - Atif Aslam</option>
+            <option value="Main Rang Sharbatton Ka">Main Rang Sharbatton Ka - Atif Aslam</option>
+            <option value="Jeena Jeena">Jeena Jeena - Atif Aslam</option>
+            <option value="Muskurane">Muskurane - Arijit Singh</option>
+            <option value="Gazab Ka Hai Yeh Din">Gazab Ka Hai Yeh Din - Arijit Singh</option>
+            <option value="Itni Si Baat Hai">Itni Si Baat Hai - Arijit Singh</option>
+            <option value="Mast Magan">Mast Magan - Arijit Singh</option>
+            <option value="Dekha Hazaro Dafaa">DeKha Hazaro Dafaa - Arijit Singh</option>
+            <option value="Prada">Prada - Jass Manak</option>
+            <option value="Lehenga">Lehenga - Jass Manak</option>
+            <option value="Khyal">Khyal - Jass Manak</option>
+            <option value="Rabb Wangu">Rabb Wangu - Jass Manak</option>
+            <option value="Yaara Tere Warga">Yaara Tere Warga - Jass Manak</option>
+          </select>
+          <button type="submit" class="ml-3 btn btn-primary">Add</button>
+        </form>
+        <h1 class="p-2">My Playlist</h1>
+        <div id="tasks" class="p-2 row m-0"></div>
+      </div>
           <script>
             $(document).ready(function () {
 
@@ -235,13 +282,3 @@ ref.once("value")
           </script>  
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
