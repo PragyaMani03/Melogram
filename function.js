@@ -11,7 +11,7 @@ addBtn.addEventListener('click', e => {
     last_name: lastName.value,
     user_name: userName.value,
     password: password.value,
-    room_id: roomId.value
+    // room_id: roomId.value
   });
 });
 
@@ -23,7 +23,7 @@ updateBtn.addEventListener('click', e => {
     last_name: lastName.value,
     user_name: userName.value,
     password: password.value,
-    room_id: roomId.value
+    // room_id: roomId.value
     };
     usersRef.child(userId.value).update(newData);
   });
